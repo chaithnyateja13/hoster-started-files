@@ -30,3 +30,4 @@ https://fonts.google.com/specimen/Lato
 https://fonts.google.com/specimen/Playfair+Display
 # hoster-started-files
 # hoster-started-files
+# main-page
