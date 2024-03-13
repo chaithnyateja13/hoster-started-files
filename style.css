@@ -1,6 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 body {
   background-color: whitesmoke;
-  padding: 0px;
+  padding: 5% 9%;
 }
 nav {
   display: flex;
@@ -31,8 +36,23 @@ nav ul {
   list-style: none;
   display: none;
 }
-
 .all-image {
+  position: relative;
+  height: 300px;
+  width: 300px;
+
+  overflow: hidden;
+}
+.all-image img {
+  position: absolute;
+
+  margin: 40px;
+  height: auto;
+  width: 200px;
+  transform-origin: 1 1;
+}
+
+/* .all-image {
   position: relative;
   height: 300px;
   overflow: hidden;
@@ -40,36 +60,36 @@ nav ul {
 .all-image img {
   position: absolute;
   top: 0%;
-  left: 10%;
+  left: 0%;
   transform: translate(-50%, -50%);
   margin: 40px;
   height: auto;
   width: 200px;
   transform-origin: 50 50;
-}
+} */
 .blue-shape {
   position: absolute;
-  rotate: 315deg;
-  animation: rotate-blue 1s linear infinite;
+  rotate: 360deg;
+  animation: rotate-blue 3s linear infinite;
 }
 .pink-shape {
   position: absolute;
-  rotate: 330deg;
-  animation: rotate-pink 1s linear infinite;
+  rotate: 360deg;
+  animation: rotate-pink 3s linear infinite;
 }
 .purple-shape {
   position: absolute;
-  rotate: 345deg;
-  animation: rotate-purple 1s linear infinite;
+  rotate: 360deg;
+  animation: rotate-purple 3s linear infinite;
 }
 .main-shape {
   position: absolute;
   rotate: 360deg;
-  animation: rotate-img 1s linear infinite;
+  animation: rotate-img 4s linear infinite;
 }
 @keyframes rotate-blue {
-  1% {
-    transform: rotate(345deg);
+  0% {
+    transform: rotate(315deg);
   }
   33% {
     transform: rotate(360deg);
@@ -78,12 +98,12 @@ nav ul {
     transform: rotate(360deg);
   }
   100% {
-    transform: rotate(345deg);
+    transform: rotate(315deg);
   }
 }
 @keyframes rotate-pink {
   0% {
-    transform: rotate(350deg);
+    transform: rotate(330deg);
   }
   33% {
     transform: rotate(360deg);
@@ -92,12 +112,12 @@ nav ul {
     transform: rotate(360deg);
   }
   100% {
-    transform: rotate(350deg);
+    transform: rotate(330deg);
   }
 }
 @keyframes rotate-purple {
   0% {
-    transform: rotate(355deg);
+    transform: rotate(345deg);
   }
   33% {
     transform: rotate(360deg);
@@ -106,7 +126,7 @@ nav ul {
     transform: rotate(360deg);
   }
   100% {
-    transform: rotate(355deg);
+    transform: rotate(345deg);
   }
 }
 @keyframes rotate-img {
@@ -125,7 +145,7 @@ h1 {
 .text-hosters {
   margin: 5px;
   color: #909090;
-  font-size: 15px;
+  font-size: 17px;
 }
 .email-checkbox {
   padding-left: 15px;
@@ -187,7 +207,6 @@ h1 {
 }
 
 img.hero-avatar-text {
-  display: flex;
 }
 .hero-avatar-text {
   margin-left: 10px;
@@ -234,7 +253,7 @@ img.hero-avatar-text {
     rotate: 360deg;
   }
   h1 {
-    font-size: 60px;
+    font-size: 43px;
   }
   .e-mail-join {
     display: flex;
@@ -306,4 +325,21 @@ img.hero-avatar-text {
     max-width: 40%;
     padding-top: 80px;
   } */
+  .all-image {
+    position: none;
+    height: 470px;
+    width: 600px;
+    top: 30%;
+    left: 0%;
+    transform: translateX(-50% -50%);
+  }
+  .image-flex {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 10%;
+  }
+  .all-text-pc {
+    height: auto;
+    width: 60%;
+  }
 }
