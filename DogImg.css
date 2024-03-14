@@ -1,0 +1,124 @@
+/* Method 1 styles */
+.parent-div {
+  position: relative;
+  width: 100vw; /* Adjust width as needed */
+  height: 100vh; /* Adjust height as needed */
+  border: 1px solid #ccc; /* Optional outline for visualization */
+  margin: 20px;
+}
+
+.child-div-method1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.blue {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #49c4eb;
+  height: 450px;
+  width: 650px;
+  z-index: -1;
+  rotate: 20deg;
+  transform-origin: 0 0;
+  animation: rotate-blue 3s linear infinite;
+}
+.purple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ad49eb;
+  height: 500px;
+  width: 700px;
+  z-index: -2;
+  rotate: 20deg;
+  transform-origin: 0 0;
+  animation: rotate-purple 3s linear infinite;
+}
+
+.pink {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #eb49b4;
+  height: 550px;
+  width: 750px;
+  z-index: -3;
+  rotate: 20deg;
+  transform-origin: 0 0;
+  animation: rotate-pink 3s linear infinite;
+}
+
+.child-div-method1 img {
+  /* Center the image within the child div */
+  display: block;
+  margin: 0 auto;
+  width: 100%; /* Adjust width if needed */
+  transform-origin: center;
+  rotate: 20deg;
+}
+
+/* Method 2 styles (unchanged) */
+.child-div-method2 {
+  width: 80px;
+  height: 30px;
+  background-color: #e0e0e0;
+  text-align: center;
+  line-height: 30px;
+}
+
+@keyframes rotate-blue {
+  0% {
+    transform: rotate(315deg);
+  }
+  33% {
+    transform: rotate(360deg);
+  }
+  66% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(315deg);
+  }
+}
+@keyframes rotate-pink {
+  0% {
+    transform: rotate(330deg);
+  }
+  33% {
+    transform: rotate(360deg);
+  }
+  66% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(330deg);
+  }
+}
+@keyframes rotate-purple {
+  0% {
+    transform: rotate(345deg);
+  }
+  33% {
+    transform: rotate(360deg);
+  }
+  66% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(345deg);
+  }
+}
+@keyframes rotate-img {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
