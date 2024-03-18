@@ -2,6 +2,33 @@
   margin: 0;
   padding: 0;
   border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  padding: 7px;
+  border-radius: 20px;
+  border: 7px solid red;
+  background-color: rgba(245, 245, 245, 0.143);
+  perspective: transformY 300ms;
+  display: flex;
+  max-width: 50%;
+  margin: auto;
+  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container:hover {
+  transform: translateZ(20px);
+}
+h1 {
+  font-size: 190%;
 }
 .main-image {
   width: 100%;
@@ -13,16 +40,35 @@
   perspective: 100px;
   margin-bottom: 20px;
   position: relative;
-  --defualt-rotate: 10deg;
+  --defualt-rotate: 3deg;
 }
 img {
+  position: absolute;
   width: 100%;
-  border: 1px solid black;
-
+  height: 100%;
   --rotateY: 0deg;
   --rotateX: 0deg;
   transform: perspective(600px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
   transition: transform 300ms;
+}
+img:hover {
+  transform: translateZ(20px);
+}
+.container::before {
+  container: var(--defualt-rotate);
+  position: absolute;
+  width: 180px;
+  background-color: aliceblue;
+  box-shadow: 0 0 20px black;
+  animation: animate 4s linear infinite;
+}
+
+.container::after {
+  container: "";
+  position: absolute;
+  inset: 10px;
+  background-color: aquamarine;
+  border-radius: 16px;
 }
 .spot {
   width: calc(100% / 3);
@@ -41,6 +87,7 @@ img {
   --rotateX: var(--defualt-rotate);
   --rotateY: calc(var(--defualt-rotate) * -1);
   transform: translate3d(200px);
+  transform: translateZ(20px);
 }
 .spot:nth-child(2) {
   top: 0;
@@ -50,6 +97,7 @@ img {
 .spot:nth-child(2):hover ~ img {
   --rotateX: var(--defualt-rotate);
   --rotateY: 2deg;
+  transform: translateZ(20px);
 }
 .spot:nth-child(3) {
   top: 0;
@@ -59,6 +107,7 @@ img {
 .spot:nth-child(3):hover ~ img {
   --rotateX: calc(var(--defualt-rotate));
   --rotateY: calc(var(--defualt-rotate));
+  transform: translateZ(20px);
 }
 .spot:nth-child(4) {
   bottom: 0;
@@ -68,6 +117,7 @@ img {
 .spot:nth-child(4):hover ~ img {
   --rotateX: calc(var(--defualt-rotate) * -1);
   --rotateY: calc(var(--defualt-rotate) * -1);
+  transform: translateZ(20px);
 }
 .spot:nth-child(5) {
   bottom: 0;
@@ -94,3 +144,22 @@ img {
 }
 .spot:nth-child(9):hover ~ img {
 } */
+.btn {
+  font-family: sans-serif;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+}
+.btn:hover {
+  background-color: white;
+  color: black;
+}
+.savedown {
+  display: flex;
+}
