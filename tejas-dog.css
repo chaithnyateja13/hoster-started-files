@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.main-image {
+  width: 100%;
+  border: 1px solid white;
+  max-width: 600px;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+  display: block;
+  perspective: 100px;
+  margin-bottom: 20px;
+  position: relative;
+  --defualt-rotate: 10deg;
+}
+img {
+  width: 100%;
+  border: 1px solid black;
+
+  --rotateY: 0deg;
+  --rotateX: 0deg;
+  transform: perspective(600px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
+  transition: transform 300ms;
+}
+.spot {
+  width: calc(100% / 3);
+  height: calc(100% / 2);
+  display: inline-block;
+  /* background-color: rgba(228, 86, 51, 0.681); */
+  position: absolute;
+  z-index: 1;
+}
+.spot:nth-child(1) {
+  top: 0;
+  left: 0;
+  background-color: rgba(229, 255, 0, 0);
+}
+.spot:nth-child(1):hover ~ img {
+  --rotateX: var(--defualt-rotate);
+  --rotateY: calc(var(--defualt-rotate) * -1);
+  transform: translate3d(200px);
+}
+.spot:nth-child(2) {
+  top: 0;
+  left: calc(100% / 3);
+  background-color: rgba(229, 255, 0, 0);
+}
+.spot:nth-child(2):hover ~ img {
+  --rotateX: var(--defualt-rotate);
+  --rotateY: 2deg;
+}
+.spot:nth-child(3) {
+  top: 0;
+  right: 0;
+  background-color: rgba(229, 255, 0, 0);
+}
+.spot:nth-child(3):hover ~ img {
+  --rotateX: calc(var(--defualt-rotate));
+  --rotateY: calc(var(--defualt-rotate));
+}
+.spot:nth-child(4) {
+  bottom: 0;
+  left: 0;
+  background-color: rgba(229, 255, 0, 0);
+}
+.spot:nth-child(4):hover ~ img {
+  --rotateX: calc(var(--defualt-rotate) * -1);
+  --rotateY: calc(var(--defualt-rotate) * -1);
+}
+.spot:nth-child(5) {
+  bottom: 0;
+  left: calc(100% / 3);
+  background-color: rgba(229, 255, 0, 0);
+}
+.spot:nth-child(5):hover ~ img {
+  --rotateX: calc(var(--defualt-rotate) * -1);
+  --rotateY: -2deg;
+}
+.spot:nth-child(6) {
+  bottom: 0;
+  right: 0;
+  background-color: rgba(229, 255, 0, 0);
+}
+.spot:nth-child(6):hover ~ img {
+  --rotateX: calc(var(--defualt-rotate) * -1);
+  --rotateY: var(--defualt-rotate);
+}
+
+/* .spot:nth-child(7):hover ~ img {
+}
+.spot:nth-child(8):hover ~ img {
+}
+.spot:nth-child(9):hover ~ img {
+} */
