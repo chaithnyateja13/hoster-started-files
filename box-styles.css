@@ -1,0 +1,286 @@
+*,
+*::after,
+* ::before {
+  box-sizing: border-box;
+}
+.hero {
+  max-width: 650px;
+  height: 900px;
+
+  margin: 0 auto;
+
+  perspective: 800px;
+  position: relative;
+}
+/* .hero:hover > * {
+} */
+/* .hero:hover > .container {
+  transform:;
+} */
+/* .hero:hover > .container h1 {
+  transform: translateZ(200px) scale(2);
+  perspective: 300px;
+} */
+
+/* .hero:hover > .container h2 {
+  transform: translateZ(100px) scale(1.5);
+}
+.hero:hover > p {
+  transform: translateZ(200px);
+} */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  border: 4px solid black;
+  border-radius: 40px;
+  aspect-ratio: 16/9;
+  transform: perspective(300px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
+  transition: transform 300ms;
+  padding: 10px;
+  /* --rotateY: 0deg; */
+  /* --rotateX: 0deg; */
+  /* margin-top: 50px; */
+  /* margin-bottom: 20px; */
+
+  --defualt-rotate: 10deg;
+}
+h1 {
+  /* transform: perspective(300px) rotateY(var(--rotateY)) rotateX(var(--rotateX)); */
+  transition: transform 300ms;
+  --rotateY: 0deg;
+  --rotateX: 0deg;
+  /* margin-top: 50px; */
+}
+h2 {
+  /* transform: perspective(600px) rotateY(var(--rotateY)) rotateX(var(--rotateX)); */
+  transition: transform 300ms;
+  /* --rotateY: 0deg;
+  --rotateX: 0deg; */
+  /* margin-top: 50px; */
+}
+p {
+  /* transform: perspective(600px) rotateY(var(--rotateY)) rotateX(var(--rotateX)); */
+  transition: transform 300ms;
+  /* --rotateY: 0deg;
+  --rotateX: 0deg; */
+}
+img {
+  width: 100%;
+  border: 1px solid black;
+  height: 100%;
+  /* transform: perspective(600px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
+  transition: transform 300ms;
+  --rotateY: 0deg;
+  --rotateX: 0deg; */
+  border-radius: 35px;
+}
+
+.box {
+  height: calc(100% / 3);
+  width: calc(100% / 3);
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+}
+.box:nth-child(1) {
+  top: 0;
+  left: 0;
+  /* background-color: rgba(196, 23, 23, 0.525); */
+}
+/* .box:nth-child(1):hover ~ img {
+  --rotateX: var(--defualt-rotate);
+  --rotateY: calc(var(--defualt-rotate) * -1);
+} */
+.hero .box:nth-child(1):hover ~ .container {
+  --rotateX: var(--defualt-rotate);
+  --rotateY: calc(var(--defualt-rotate) * -1);
+}
+.hero .box:nth-child(1):hover ~ .container img {
+  transform: perspective(600px) translateZ(150px);
+}
+.hero .box:nth-child(1):hover ~ .container h1 {
+  transform: perspective(600px) translateZ(400px) scale(2);
+}
+.hero .box:nth-child(1):hover ~ .container h2 {
+  transform: perspective(600px) translateZ(200px) scale(1.2);
+}
+.hero .box:nth-child(1):hover ~ .container p {
+  transform: perspective(600px) translateZ(200px) scale(1);
+}
+.box:nth-child(2) {
+  top: 0;
+  left: calc(100% / 3);
+  /* background-color: rgba(255, 106, 0, 0.576); */
+}
+.hero .box:nth-child(2):hover ~ .container {
+  --rotateX: var(--defualt-rotate);
+  --rotateY: 0deg;
+}
+
+.hero .box:nth-child(2):hover ~ .container img {
+  transform: perspective(600px) translateZ(150px);
+}
+.hero .box:nth-child(2):hover ~ .container h1 {
+  transform: perspective(600px) translateZ(400px) scale(2);
+}
+.hero .box:nth-child(2):hover ~ .container h2 {
+  transform: perspective(600px) translateZ(200px) scale(1.2);
+}
+.hero .box:nth-child(2):hover ~ .container p {
+  transform: perspective(600px) translateZ(200px) scale(1);
+}
+.box:nth-child(3) {
+  top: 0;
+  right: 0;
+  /* background-color: rgba(248, 225, 14, 0.559); */
+}
+.hero .box:nth-child(3):hover ~ .container {
+  --rotateX: var(--defualt-rotate);
+  --rotateY: var(--defualt-rotate);
+}
+
+.hero .box:nth-child(3):hover ~ .container img {
+  transform: perspective(600px) translateZ(150px);
+}
+.hero .box:nth-child(3):hover ~ .container h1 {
+  transform: perspective(600px) translateZ(400px) scale(2);
+}
+.hero .box:nth-child(3):hover ~ .container h2 {
+  transform: perspective(600px) translateZ(200px) scale(1.2);
+}
+.hero .box:nth-child(3):hover ~ .container p {
+  transform: perspective(600px) translateZ(200px) scale(1);
+}
+
+.box:nth-child(4) {
+  top: calc(100% / 3);
+  left: 0;
+  /* background-color: rgba(158, 247, 4, 0.466); */
+}
+.hero .box:nth-child(4):hover ~ .container {
+  --rotateX: 0deg;
+  --rotateY: calc(var(--defualt-rotate) * -1);
+}
+.hero .box:nth-child(4):hover ~ .container img {
+  transform: perspective(600px) translateZ(150px);
+}
+.hero .box:nth-child(4):hover ~ .container h1 {
+  transform: perspective(600px) translateZ(400px) scale(2);
+}
+.hero .box:nth-child(4):hover ~ .container h2 {
+  transform: perspective(600px) translateZ(200px) scale(1.2);
+}
+.hero .box:nth-child(4):hover ~ .container p {
+  transform: perspective(600px) translateZ(200px) scale(1);
+}
+
+.box:nth-child(5) {
+  top: calc(100% / 3);
+  right: calc(100% / 3);
+  /* background-color: rgba(0, 241, 125, 0.521); */
+}
+.hero .box:nth-child(5):hover ~ .container {
+  --rotateX: 0deg;
+  --rotateY: 0deg;
+}
+.hero .box:nth-child(5):hover ~ .container img {
+  transform: perspective(600px) translateZ(150px);
+}
+.hero .box:nth-child(5):hover ~ .container h1 {
+  transform: perspective(600px) translateZ(500px) scale(1.2);
+}
+.hero .box:nth-child(5):hover ~ .container h2 {
+  transform: perspective(600px) translateZ(200px) scale(1.2);
+}
+.hero .box:nth-child(5):hover ~ .container p {
+  transform: perspective(600px) translateZ(200px) scale(1);
+}
+.box:nth-child(6) {
+  top: calc(100% / 3);
+  right: 0;
+  /* background-color: rgba(0, 247, 255, 0.448); */
+}
+.hero .box:nth-child(6):hover ~ .container {
+  --rotateX: 0deg;
+  --rotateY: var(--defualt-rotate);
+}
+.hero .box:nth-child(6):hover ~ .container img {
+  transform: perspective(600px) translateZ(150px);
+}
+.hero .box:nth-child(6):hover ~ .container h1 {
+  transform: perspective(600px) translateZ(400px) scale(2);
+}
+.hero .box:nth-child(6):hover ~ .container h2 {
+  transform: perspective(600px) translateZ(200px) scale(1.2);
+}
+.hero .box:nth-child(6):hover ~ .container p {
+  transform: perspective(600px) translateZ(200px) scale(1);
+}
+.box:nth-child(7) {
+  bottom: 0;
+  left: 0;
+  /* background-color: rgba(0, 65, 231, 0.366); */
+}
+.hero .box:nth-child(7):hover ~ .container {
+  --rotateX: calc(var(--defualt-rotate) * -1);
+  --rotateY: calc(var(--defualt-rotate) * -1);
+}
+.hero .box:nth-child(7):hover ~ .container img {
+  transform: perspective(600px) translateZ(150px);
+}
+.hero .box:nth-child(7):hover ~ .container h1 {
+  transform: perspective(600px) translateZ(400px) scale(2);
+}
+.hero .box:nth-child(7):hover ~ .container h2 {
+  transform: perspective(600px) translateZ(200px) scale(1.2);
+}
+.hero .box:nth-child(7):hover ~ .container p {
+  transform: perspective(600px) translateZ(200px) scale(1);
+}
+.box:nth-child(8) {
+  bottom: 0;
+  left: calc(100% / 3);
+  /* background-color: rgba(245, 1, 249, 0.336); */
+}
+.hero .box:nth-child(8):hover ~ .container {
+  --rotateX: calc(var(--defualt-rotate) * -1);
+  --rotateY: 0deg;
+}
+.hero .box:nth-child(8):hover ~ .container img {
+  transform: perspective(600px) translateZ(150px);
+}
+.hero .box:nth-child(8):hover ~ .container h1 {
+  transform: perspective(600px) translateZ(400px) scale(2);
+}
+.hero .box:nth-child(8):hover ~ .container h2 {
+  transform: perspective(600px) translateZ(200px) scale(1.2);
+}
+.hero .box:nth-child(8):hover ~ .container p {
+  transform: perspective(600px) translateZ(200px) scale(1);
+}
+.box:nth-child(9) {
+  bottom: 0;
+  right: 0;
+  /* background-color: rgba(246, 16, 47, 0.332); */
+}
+.hero .box:nth-child(9):hover ~ .container {
+  --rotateX: calc(var(--defualt-rotate) * -1);
+  --rotateY: var(--defualt-rotate);
+}
+.hero .box:nth-child(9):hover ~ .container img {
+  transform: perspective(600px) translateZ(150px);
+}
+.hero .box:nth-child(9):hover ~ .container h1 {
+  transform: perspective(600px) translateZ(400px) scale(1);
+}
+.hero .box:nth-child(9):hover ~ .container h2 {
+  transform: perspective(600px) translateZ(200px) scale(1.2);
+}
+.hero .box:nth-child(9):hover ~ .container p {
+  transform: perspective(600px) translateZ(200px) scale(1);
+}

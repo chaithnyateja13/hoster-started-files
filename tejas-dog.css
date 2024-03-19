@@ -40,7 +40,8 @@ img {
 .spot:nth-child(1):hover ~ img {
   --rotateX: var(--defualt-rotate);
   --rotateY: calc(var(--defualt-rotate) * -1);
-  transform: translate3d(200px);
+  transform: translate3d(10px);
+  perspective: 200px;
 }
 .spot:nth-child(2) {
   top: 0;
