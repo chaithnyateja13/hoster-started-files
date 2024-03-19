@@ -35,8 +35,10 @@
   gap: 50px;
   width: 100%;
   max-width: 600px;
+  /* height: 690px; */
   margin: 50px auto;
   border: 4px solid black;
+  background-color: aliceblue;
   border-radius: 40px;
   aspect-ratio: 16/9;
   transform: perspective(300px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
@@ -47,7 +49,32 @@
   /* margin-top: 50px; */
   /* margin-bottom: 20px; */
 
-  --defualt-rotate: 10deg;
+  --defualt-rotate: 6deg;
+}
+.container::before {
+  position: absolute;
+  content: "";
+  top: -10px;
+  height: 705px;
+  width: 620px;
+  background: rgb(255, 85, 85);
+  border-radius: 40px;
+  z-index: -1;
+  transition: 0.3s;
+  animation: animate 3s linear infinite;
+}
+.container:hover::before {
+  height: 670px;
+  width: 600px;
+}
+@keyframes animate {
+  50% {
+    filter: hue-rotate(350deg);
+  }
+}
+.main-image {
+  filter: none;
+  z-index: 2;
 }
 h1 {
   /* transform: perspective(300px) rotateY(var(--rotateY)) rotateX(var(--rotateX)); */
@@ -101,7 +128,7 @@ img {
   --rotateY: calc(var(--defualt-rotate) * -1);
 }
 .hero .box:nth-child(1):hover ~ .container img {
-  transform: perspective(600px) translateZ(150px);
+  transform: perspective(600px) translateZ(100px);
 }
 .hero .box:nth-child(1):hover ~ .container h1 {
   transform: perspective(600px) translateZ(400px) scale(2);
@@ -123,7 +150,7 @@ img {
 }
 
 .hero .box:nth-child(2):hover ~ .container img {
-  transform: perspective(600px) translateZ(150px);
+  transform: perspective(600px) translateZ(100px);
 }
 .hero .box:nth-child(2):hover ~ .container h1 {
   transform: perspective(600px) translateZ(400px) scale(2);
@@ -145,7 +172,7 @@ img {
 }
 
 .hero .box:nth-child(3):hover ~ .container img {
-  transform: perspective(600px) translateZ(150px);
+  transform: perspective(600px) translateZ(100px);
 }
 .hero .box:nth-child(3):hover ~ .container h1 {
   transform: perspective(600px) translateZ(400px) scale(2);
@@ -167,7 +194,7 @@ img {
   --rotateY: calc(var(--defualt-rotate) * -1);
 }
 .hero .box:nth-child(4):hover ~ .container img {
-  transform: perspective(600px) translateZ(150px);
+  transform: perspective(600px) translateZ(100px);
 }
 .hero .box:nth-child(4):hover ~ .container h1 {
   transform: perspective(600px) translateZ(400px) scale(2);
@@ -189,7 +216,7 @@ img {
   --rotateY: 0deg;
 }
 .hero .box:nth-child(5):hover ~ .container img {
-  transform: perspective(600px) translateZ(150px);
+  transform: perspective(600px) translateZ(100px);
 }
 .hero .box:nth-child(5):hover ~ .container h1 {
   transform: perspective(600px) translateZ(500px) scale(1.2);
@@ -210,7 +237,7 @@ img {
   --rotateY: var(--defualt-rotate);
 }
 .hero .box:nth-child(6):hover ~ .container img {
-  transform: perspective(600px) translateZ(150px);
+  transform: perspective(600px) translateZ(100px);
 }
 .hero .box:nth-child(6):hover ~ .container h1 {
   transform: perspective(600px) translateZ(400px) scale(2);
@@ -231,7 +258,7 @@ img {
   --rotateY: calc(var(--defualt-rotate) * -1);
 }
 .hero .box:nth-child(7):hover ~ .container img {
-  transform: perspective(600px) translateZ(150px);
+  transform: perspective(600px) translateZ(100px);
 }
 .hero .box:nth-child(7):hover ~ .container h1 {
   transform: perspective(600px) translateZ(400px) scale(2);
@@ -252,7 +279,7 @@ img {
   --rotateY: 0deg;
 }
 .hero .box:nth-child(8):hover ~ .container img {
-  transform: perspective(600px) translateZ(150px);
+  transform: perspective(600px) translateZ(100px);
 }
 .hero .box:nth-child(8):hover ~ .container h1 {
   transform: perspective(600px) translateZ(400px) scale(2);
@@ -273,7 +300,7 @@ img {
   --rotateY: var(--defualt-rotate);
 }
 .hero .box:nth-child(9):hover ~ .container img {
-  transform: perspective(600px) translateZ(150px);
+  transform: perspective(600px) translateZ(100px);
 }
 .hero .box:nth-child(9):hover ~ .container h1 {
   transform: perspective(600px) translateZ(400px) scale(1);
